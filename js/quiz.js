@@ -1,5 +1,5 @@
 /**
- * Orange Rabbit English - Quiz Widget (首頁程度快測小工具)
+ * Ferryman English - Quiz Widget (首頁程度快測小工具)
  * 架構預留日後升級為專業多題型獨立測驗模組 (Extended Quiz Module)
  */
 
@@ -39,7 +39,7 @@ const QUIZ_DATA = [
   },
   {
     id: 4,
-    question: "目標題 4：未來 3 個月內，你最渴望在 Orange Rabbit 達成的核心突破是？",
+    question: "目標題 4：未來 3 個月內，你最渴望在 Ferryman English 達成的核心突破是？",
     desc: "幫助我們為你推薦最精準的學習計畫：",
     options: [
       { text: "建立開口自信，敢於出國旅遊自由行、點餐問路不恐懼", target: "基礎生活", score: 1 },
@@ -187,7 +187,7 @@ function showCalculatingState() {
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
         </svg>
       </div>
-      <h3 class="text-xl font-bold text-slate-800">Orange Rabbit 正在為你綜合分析語感與學習痛點...</h3>
+      <h3 class="text-xl font-bold text-slate-800">Ferryman English 正在為你綜合分析語感與學習痛點...</h3>
       <p class="text-slate-500 text-sm">依據對話直覺、聽力理解、職場需求綜合評估中</p>
     </div>
   `;
@@ -215,7 +215,7 @@ function renderResult() {
   }
 
   // 儲存至 sessionStorage，方便 contact 頁面直接取用
-  sessionStorage.setItem('orange_rabbit_quiz_result', JSON.stringify({
+  sessionStorage.setItem('ferryman_quiz_result', JSON.stringify({
     levelCode: profile.levelCode,
     course: profile.recommendCourse,
     score: avgScore.toFixed(1)
@@ -286,3 +286,4 @@ function resetQuiz() {
   userAnswers = [];
   location.reload();
 }
+

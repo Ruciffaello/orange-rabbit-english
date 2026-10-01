@@ -1,6 +1,6 @@
-# 🥕 Orange Rabbit 橘兔英文教室 — 官方靜態網站
+﻿# 🥕 擺渡人英文教室 Ferryman English — 官方靜態網站
 
-> **Slogan**: *Hop into Confident English!* 陪你輕鬆跳出英文舒適圈，自信開口說。  
+> **Slogan**: *Navigate into Confident English! 渡你跨越英語汪洋，自信開口說* 陪你輕鬆跳出英文舒適圈，自信開口說。  
 > 專為個人獨立英文家教打造的高質感響應式（RWD）多頁靜態網站，專為 **GitHub Pages** 最佳化設計。
 
 ---
@@ -31,7 +31,7 @@
 ### 步驟 1：建立 GitHub Repository
 1. 登入 [GitHub](https://github.com/)。
 2. 點擊右上角 **+** ➔ **New repository**。
-3. 輸入 Repository 名稱（例如：`orange-rabbit-english`），設定為 **Public**。
+3. 輸入 Repository 名稱（例如：`ferryman-english`），設定為 **Public**。
 4. 點擊 **Create repository**。
 
 ### 步驟 2：將本機專案推送至 GitHub
@@ -40,7 +40,7 @@
 ```bash
 git init
 git add .
-git commit -m "feat: complete Orange Rabbit website with quiz widget"
+git commit -m "feat: complete Ferryman English website with quiz widget"
 git branch -M main
 git remote add origin https://github.com/<你的GitHub帳號>/<你的Repository名稱>.git
 git push -u origin main
@@ -87,3 +87,4 @@ git push -u origin main
     ├── main.js        # 導覽列漢堡選單、FAQ 手風琴、表單自動填入
     └── quiz.js        # 程度測驗小工具互動邏輯與動態計分
 ```
+

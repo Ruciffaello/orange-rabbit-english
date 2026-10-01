@@ -1,5 +1,5 @@
-/**
- * Orange Rabbit English - Main JavaScript
+﻿/**
+ * Ferryman English - Main JavaScript
  * 負責全站通用互動：導覽列、行動端選單、FAQ 手風琴、預約表單處理
  */
 
@@ -130,4 +130,5 @@ function initContactFormAutoFill() {
     teacherSelect.classList.add('ring-2', 'ring-orange-500', 'bg-orange-50');
   }
 }
+
 

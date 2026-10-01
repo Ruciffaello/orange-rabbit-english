@@ -1,14 +1,14 @@
-# Orange Rabbit 英語教室 — 網站設計規格書 (Design Specification)
+﻿# Ferryman English 英語教室 — 網站設計規格書 (Design Specification)
 
 > **專案定位**：個人獨立線上英語家教品牌官方網站  
 > **發佈環境**：GitHub Pages（純靜態 HTML5 + Tailwind CSS + Vanilla JS）  
-> **品牌名稱**：Orange Rabbit (橘兔英文教室)  
+> **品牌名稱**：擺渡人英文教室 (Ferryman English)  
 
 ---
 
 ## 1. 品牌定位與核心理念 (Brand Identity)
 
-- **Slogan**：*Hop into Confident English!* 陪你輕鬆跳出英文舒適圈，自信開口說。
+- **Slogan**：*Navigate into Confident English! 渡你跨越英語汪洋，自信開口說* 陪你輕鬆跳出英文舒適圈，自信開口說。
 - **品牌調性**：親切、活力、專業、不嚴肅，消除學員對「開口說英文」的心理恐慌。
 - **目標客群**：
   - 想提升職場口說、商務簡報與外商面試的上班族
@@ -43,7 +43,7 @@
 ## 3. 網站架構與頁面規劃 (Sitemap)
 
 - **首頁 (`index.html`)**：Hero 視覺區、三大教學亮點、精選方案預覽、程度測驗互動小工具、試聽影音／體驗流程、CTA
-- **關於老師 (`about.html`)**：教學背景與證照、創辦 Orange Rabbit 故事、教學哲學
+- **關於老師 (`about.html`)**：教學背景與證照、創辦 Ferryman English 故事、教學哲學
 - **課程方案與費用 (`courses.html`)**：生活口說、商務實戰、檢定衝刺等方案卡片、價格透明化、上課 4 步驟
 - **常見問題 (`faq.html`)**：折疊式手風琴（設備需求、請假退費、教材等）
 - **預約試聽與聯絡 (`contact.html`)**：預約表單、官方 LINE 一鍵加入、社群資訊
@@ -66,3 +66,4 @@
 │   └── quiz.js        # 程度測驗互動邏輯
 └── images/            # Logo、吉祥物插圖、教師示意圖
 ```
+

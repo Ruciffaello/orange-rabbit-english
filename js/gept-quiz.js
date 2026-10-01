@@ -1,5 +1,5 @@
-/**
- * Orange Rabbit English - GEPT Level Test (全民英檢文法與單字檢測 Demo 版)
+﻿/**
+ * Ferryman English - GEPT Level Test (全民英檢文法與單字檢測 Demo 版)
  * 專為獨立 quiz.html 設計，專注評測單字 (Vocabulary) 與文法 (Grammar)
  */
 
@@ -355,3 +355,4 @@ function renderGeptFinalResult() {
     </div>
   `;
 }
+
