@@ -1,0 +1,82 @@
+/* ==========================================================================
+   Orange Rabbit English - Custom Styles & Animations
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+:root {
+  --brand-orange: #f97316;
+  --brand-orange-hover: #ea580c;
+  --brand-yellow: #fbbf24;
+  --dark-slate: #0f172a;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Noto Sans TC', system-ui, -apple-system, sans-serif;
+}
+
+.font-heading {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
+}
+
+/* 微妙光暈與毛玻璃效果 */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.hero-glow {
+  background: radial-gradient(circle at 50% 30%, rgba(249, 115, 22, 0.12) 0%, rgba(251, 191, 36, 0.06) 45%, transparent 70%);
+}
+
+/* 兔兔跳動與懸浮小微動效 */
+@keyframes soft-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-soft-bounce {
+  animation: soft-bounce 3s ease-in-out infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s infinite ease-in-out;
+}
+
+/* 測驗進度條平滑過渡 */
+.transition-width {
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* FAQ 手風琴隱藏與展開動效 */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out, opacity 0.25s ease-out;
+  opacity: 0;
+}
+
+.accordion-content.open {
+  opacity: 1;
+}
+
+/* 自訂選取反白顏色 */
+::selection {
+  background-color: #fed7aa;
+  color: #9a3412;
+}

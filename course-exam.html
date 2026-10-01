@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOEIC / IELTS 國際英檢專案 | Orange Rabbit 橘兔英文教室</title>
+  <meta name="description" content="Orange Rabbit 國際英檢專案完整課綱：TOEIC 多益金色證書、IELTS 雅思高分衝刺。突破刷題盲點，掌握聽力關鍵訊號詞與口說高分論述架構。">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              300: '#fdba74',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+            },
+            accent: {
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & 自訂樣式 -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+  <!-- ==================== 頂部全域導覽列 ==================== -->
+  <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav border-b border-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="./index.html" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-500 to-accent-400 flex items-center justify-center shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          <svg class="w-7 h-7 text-white fill-current" viewBox="0 0 24 24">
+            <path d="M12 2C10.5 2 9.5 3.5 10 5.5C10.5 7.5 11 9 10 10.5C9 12 7.5 12 6 11.5C4 11 2 12.5 2 14.5C2 18 5 21 9 21C14 21 19 18 19 13C19 9 16 7 14 7C13.5 5 13.5 2 12 2ZM8 14C8.55 14 9 14.45 9 15C9 15.55 8.55 16 8 16C7.45 16 7 15.55 7 15C7 14.45 7.45 14 8 14ZM14 4C14.5 4 15 5 14.8 6.5C14.5 8 13.5 9 13.5 9.5C13.5 9.5 14.5 8.5 15.5 8.5C16.5 8.5 17.5 9.5 17.5 11C17.5 11 19 8 18 6C17 4 15.5 3 14 4Z" />
+          </svg>
+        </div>
+        <div>
+          <span class="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-brand-500 transition-colors">Orange Rabbit</span>
+          <span class="block text-xs font-semibold text-brand-600 tracking-wider uppercase">橘兔英文教室</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="./index.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">首頁</a>
+        <a href="./about.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">專業師資陣容</a>
+        <a href="./courses.html" class="text-sm font-bold text-brand-600 border-b-2 border-brand-500 pb-0.5">課程與費用</a>
+        <a href="./quiz.html" class="text-sm font-semibold text-amber-600 hover:text-amber-700 bg-amber-50 px-3 py-1 rounded-full border border-amber-200 transition-all hover:bg-amber-100 flex items-center gap-1">
+          <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          程度快測
+        </a>
+        <a href="./faq.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">常見問題</a>
+        <a href="./contact.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">聯絡諮詢</a>
+      </nav>
+
+      <!-- CTA -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="./contact.html?target=檢定專案" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-bold text-white bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 shadow-md shadow-brand-500/25 transition-all transform hover:-translate-y-0.5">
+          預約本課程試聽
+        </a>
+      </div>
+
+      <!-- Mobile Button -->
+      <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="切換導覽選單">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 shadow-xl">
+      <a href="./index.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">首頁</a>
+      <a href="./about.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">專業師資陣容</a>
+      <a href="./courses.html" class="block py-2 text-base font-bold text-brand-600">課程與費用</a>
+      <a href="./quiz.html" class="block py-2 text-base font-bold text-amber-600">⚡ 3分鐘程度快測</a>
+      <a href="./faq.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">常見問題 FAQ</a>
+      <a href="./contact.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">聯絡諮詢</a>
+      <div class="pt-2">
+        <a href="./contact.html?target=檢定專案" class="block w-full text-center py-3 rounded-xl text-sm font-bold text-white bg-brand-500 hover:bg-brand-600 shadow-md">
+          預約本課程試聽
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== 主內容區 ==================== -->
+  <main class="flex-grow pt-28 pb-20">
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- 麵包屑導航與返回按鈕 -->
+      <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-200/80">
+        <nav class="flex items-center text-xs sm:text-sm text-slate-500 space-x-2">
+          <a href="./index.html" class="hover:text-brand-600 transition">首頁</a>
+          <span>/</span>
+          <a href="./courses.html" class="hover:text-brand-600 transition">課程方案與費用</a>
+          <span>/</span>
+          <span class="text-slate-900 font-bold">TOEIC / IELTS 檢定專案</span>
+        </nav>
+        <a href="./courses.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700 bg-orange-50 hover:bg-orange-100 px-3 py-1.5 rounded-lg transition">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          <span>返回課程總覽</span>
+        </a>
+      </div>
+
+      <!-- 課程 Banner 區 -->
+      <section class="bg-gradient-to-br from-purple-600 via-indigo-600 to-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden mb-12">
+        <div class="relative z-10 space-y-4 max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold backdrop-blur-sm">
+            <span>高效高分專案</span>
+            <span>•</span>
+            <span>TOEIC 860+ 金色證書 / IELTS 6.5~7.5+ 目標</span>
+          </div>
+          <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+            TOEIC / IELTS 檢定專案<br>
+            <span class="text-purple-200 text-2xl sm:text-3xl font-bold">High-Score Exam Preparation</span>
+          </h1>
+          <p class="text-indigo-100 text-base sm:text-lg leading-relaxed pt-2">
+            盲目刷題只會浪費時間！由滿分名師親授「訊號詞抓取法則」與「口說邏輯論證骨架」，帶你在 30~60 天內跨越卡關分數。
+          </p>
+          <div class="pt-4 flex flex-wrap gap-4 items-center">
+            <div class="bg-black/30 backdrop-blur-sm px-4 py-2.5 rounded-xl text-xs font-semibold">
+              ⏱️ 單堂 50 分鐘・客製弱點加強
+            </div>
+            <div class="bg-black/30 backdrop-blur-sm px-4 py-2.5 rounded-xl text-xs font-semibold">
+              💰 NT$ 1,350 ~ 1,500 / 堂
+            </div>
+            <a href="./contact.html?target=檢定專案" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-white text-purple-800 hover:bg-purple-50 font-black text-xs sm:text-sm shadow transition">
+              <span>預約檢定弱點診斷試聽</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 適合對象與學習成效 -->
+      <section class="grid md:grid-cols-2 gap-8 mb-16">
+        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-4">
+          <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
+            這門課最適合這樣的你：
+          </h3>
+          <ul class="space-y-3 text-sm text-slate-600">
+            <li class="flex items-start gap-2.5">
+              <span class="text-purple-600 font-bold">✓</span> 多益成績卡在 600~750 分之間，寫了幾十套模擬題仍不見起色。
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-purple-600 font-bold">✓</span> 聽力 Part 3 & 4 常常恍神掉線，只要出現英澳口音就失去方向。
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-purple-600 font-bold">✓</span> 準備出國留學需要雅思（IELTS）6.5 或 7.0 門檻，口說不知如何拿到高分。
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-purple-600 font-bold">✓</span> 需要針對個人做題弱點（如時態、介系詞、長篇速讀）逐題精準覆盤。
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-purple-50/60 rounded-3xl p-8 border border-purple-100 shadow-sm space-y-4">
+          <h3 class="text-xl font-bold text-purple-950 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
+            完成本課程你將能夠：
+          </h3>
+          <ul class="space-y-3 text-sm text-purple-900">
+            <li class="flex items-start gap-2.5">
+              <span class="text-purple-600 font-bold">★</span> 破解多益換字換詞（Paraphrasing）考點，聽力秒抓核心答案。
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-purple-600 font-bold">★</span> 學會 5 種閱讀定位掃讀法（Skimming & Scanning），閱讀題提早 10 分鐘寫完。
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-purple-600 font-bold">★</span> 掌握雅思口說評分 4 大指標（語流、詞彙、語法、發音）的高分公式。
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-purple-600 font-bold">★</span> 擁有專屬的 30 天考前個人弱點錯題配速計畫表。
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 核心課綱模組 -->
+      <section class="space-y-8 mb-16">
+        <div class="text-center max-w-2xl mx-auto space-y-2">
+          <span class="text-xs font-bold text-purple-600 uppercase tracking-widest bg-purple-100 px-3 py-1 rounded-full">SYLLABUS & MODULES</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">檢定衝刺核心模組</h2>
+          <p class="text-slate-500 text-xs sm:text-sm">以實戰破題技巧為經，語感直覺為緯，擺脫死背題庫</p>
+        </div>
+
+        <div class="space-y-4">
+          
+          <!-- Module 1 -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-lg bg-purple-100 text-purple-800 text-xs font-bold">Module 01</span>
+              <span class="text-xs text-slate-400">聽力攻頂模組</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900">多益聽力速記與陷阱排除：抓出訊號詞與連音混淆</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              拆解多益 Part 2 簡短問答之三大常見陷阱（同音異義干擾、時態矛盾、問 A 答 B 迂迴句式）；訓練 Part 3 & 4 審題關鍵字速記，音檔播放第一句即可預判 80% 情境。
+            </p>
+            <div class="p-3 rounded-xl bg-slate-50 text-xs text-slate-500 space-y-1">
+              <div><strong>訓練重點：</strong> 澳洲腔與英國腔發音變異歸納、換字換詞對應題庫庫存</div>
+            </div>
+          </div>
+
+          <!-- Module 2 -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-lg bg-purple-100 text-purple-800 text-xs font-bold">Module 02</span>
+              <span class="text-xs text-slate-400">閱讀提速模組</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900">長篇商務閱讀與文法秒殺：雙篇與三篇閱讀時間管理</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Part 5 & 6 單字文法題 10 秒反射作答術，為後方多篇閱讀爭取至少 45 分鐘充裕時間。掌握商業跨文件交叉比對題（Cross-reference）定位座標技巧。
+            </p>
+          </div>
+
+          <!-- Module 3 -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-lg bg-purple-100 text-purple-800 text-xs font-bold">Module 03</span>
+              <span class="text-xs text-slate-400">雅思口說攻頂模組</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900">IELTS 雅思口說 Part 1-3 思維論述骨架與高分詞彙</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              破解「講得結巴卡詞」的根本原因。教你運用「Point ➔ Explanation ➔ Example ➔ Counter-argument」四層黃金論證架構，即便遇到冷門抽象題目也能出口成章。
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 底部預約卡片 -->
+      <section class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-3xl p-8 sm:p-12 text-center space-y-6 shadow-xl">
+        <h3 class="text-2xl sm:text-3xl font-black">不再讓檢定分數成為你職涯或留學的絆腳石！</h3>
+        <p class="text-purple-100 text-sm sm:text-base max-w-xl mx-auto">
+          立即預約 25 分鐘免費一對一試聽，將你目前的成績單或錯題帶來，由導師幫你做最精確的失分弱點盤點。
+        </p>
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="./contact.html?target=檢定專案" class="px-8 py-3.5 rounded-xl bg-white text-purple-800 font-black text-sm hover:bg-purple-50 transition shadow">
+            立即免費預約檢定專案試聽
+          </a>
+          <a href="./courses.html" class="px-6 py-3.5 rounded-xl bg-black/20 hover:bg-black/30 text-white font-bold text-sm transition">
+            查看其他方案與費用
+          </a>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- ==================== 全域頁尾 ==================== -->
+  <footer class="bg-slate-900 text-slate-400 py-14 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-500 to-amber-400 flex items-center justify-center text-white">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2C10.5 2 9.5 3.5 10 5.5C10.5 7.5 11 9 10 10.5C9 12 7.5 12 6 11.5C4 11 2 12.5 2 14.5C2 18 5 21 9 21C14 21 19 18 19 13C19 9 16 7 14 7C13.5 5 13.5 2 12 2ZM8 14C8.55 14 9 14.45 9 15C9 15.55 8.55 16 8 16C7.45 16 7 15.55 7 15C7 14.45 7.45 14 8 14ZM14 4C14.5 4 15 5 14.8 6.5C14.5 8 13.5 9 13.5 9.5C13.5 9.5 14.5 8.5 15.5 8.5C16.5 8.5 17.5 9.5 17.5 11C17.5 11 19 8 18 6C17 4 15.5 3 14 4Z" />
+              </svg>
+            </div>
+            <span class="text-xl font-bold text-white tracking-tight">Orange Rabbit 橘兔英文教室</span>
+          </div>
+          <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+            *Hop into Confident English!* 一對一線上客製化英語家教。
+          </p>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white tracking-wider uppercase mb-4">網站選單</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="./index.html" class="hover:text-white transition">首頁</a></li>
+            <li><a href="./about.html" class="hover:text-white transition">專業師資陣容</a></li>
+            <li><a href="./courses.html" class="hover:text-white transition text-brand-400">課程方案與費用</a></li>
+            <li><a href="./quiz.html" class="hover:text-white transition">程度快測小工具</a></li>
+            <li><a href="./faq.html" class="hover:text-white transition">常見問題 FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white tracking-wider uppercase mb-4">預約與聯絡</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="./contact.html" class="text-brand-400 hover:text-brand-300 font-bold transition">預約 25 分鐘試聽</a></li>
+            <li><span class="text-slate-400">官方 LINE：@orangerabbit</span></li>
+            <li><span class="text-slate-400">Email: hello@orangerabbit.com</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+        &copy; 2026 Orange Rabbit English Lab. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
+

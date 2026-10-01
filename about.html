@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>專業師資陣容與教學特色 | Orange Rabbit 橘兔英文教室</title>
+  <meta name="description" content="認識 Orange Rabbit 橘兔英文教室專業師資團隊。由創辦人 Peter 老師領軍，每位導師皆具備國際認證與獨創教學方法，提供一對一個性化引導。">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              300: '#fdba74',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+            },
+            accent: {
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & 自訂樣式 -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+  <!-- ==================== 頂部全域導覽列 ==================== -->
+  <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav border-b border-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="./index.html" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-500 to-accent-400 flex items-center justify-center shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          <svg class="w-7 h-7 text-white fill-current" viewBox="0 0 24 24">
+            <path d="M12 2C10.5 2 9.5 3.5 10 5.5C10.5 7.5 11 9 10 10.5C9 12 7.5 12 6 11.5C4 11 2 12.5 2 14.5C2 18 5 21 9 21C14 21 19 18 19 13C19 9 16 7 14 7C13.5 5 13.5 2 12 2ZM8 14C8.55 14 9 14.45 9 15C9 15.55 8.55 16 8 16C7.45 16 7 15.55 7 15C7 14.45 7.45 14 8 14ZM14 4C14.5 4 15 5 14.8 6.5C14.5 8 13.5 9 13.5 9.5C13.5 9.5 14.5 8.5 15.5 8.5C16.5 8.5 17.5 9.5 17.5 11C17.5 11 19 8 18 6C17 4 15.5 3 14 4Z" />
+          </svg>
+        </div>
+        <div>
+          <span class="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-brand-500 transition-colors">Orange Rabbit</span>
+          <span class="block text-xs font-semibold text-brand-600 tracking-wider uppercase">橘兔英文教室</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="./index.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">首頁</a>
+        <a href="./about.html" class="text-sm font-bold text-brand-600 border-b-2 border-brand-500 pb-0.5">專業師資陣容</a>
+        <a href="./courses.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">課程與費用</a>
+        <a href="./quiz.html" class="text-sm font-semibold text-amber-600 hover:text-amber-700 bg-amber-50 px-3 py-1 rounded-full border border-amber-200 transition-all hover:bg-amber-100 flex items-center gap-1">
+          <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          程度快測
+        </a>
+        <a href="./faq.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">常見問題</a>
+        <a href="./contact.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">聯絡諮詢</a>
+      </nav>
+
+      <!-- CTA -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="./contact.html" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-bold text-white bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 shadow-md shadow-brand-500/25 transition-all transform hover:-translate-y-0.5">
+          免費預約 25 分鐘試聽
+        </a>
+      </div>
+
+      <!-- Mobile Button -->
+      <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="切換導覽選單">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 shadow-xl">
+      <a href="./index.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">首頁</a>
+      <a href="./about.html" class="block py-2 text-base font-bold text-brand-600">專業師資陣容</a>
+      <a href="./courses.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">課程與費用</a>
+      <a href="./quiz.html" class="block py-2 text-base font-bold text-amber-600">⚡ 3分鐘程度快測</a>
+      <a href="./faq.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">常見問題 FAQ</a>
+      <a href="./contact.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">聯絡諮詢</a>
+      <div class="pt-2">
+        <a href="./contact.html" class="block w-full text-center py-3 rounded-xl text-sm font-bold text-white bg-brand-500 hover:bg-brand-600 shadow-md">
+          免費預約 25 分鐘試聽
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== 主內容區 ==================== -->
+  <main class="flex-grow pt-28 pb-20">
+
+    <!-- 頁首標題與團隊承諾 -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-brand-700 text-xs font-bold border border-orange-200">
+          <span>OUR TEACHING TEAM & PHILOSOPHY</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+          嚴選頂尖師資陣容，<br>
+          各具獨創專屬教學心法。
+        </h1>
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+          在 Orange Rabbit，我們相信沒有一套公式適合所有學生。我們的每一位導師皆具備國際專業教學認證與豐富實戰背景，並發展出各自獨特、針對不同學習瓶頸的專屬教學系統。
+        </p>
+      </div>
+    </section>
+
+    <!-- 師資陣容清單（具備高度擴展性的卡片架構） -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 mb-20">
+      
+      <!-- ================= 老師卡片 1：Peter 老師 ================= -->
+      <article class="bg-white rounded-3xl border-2 border-slate-200/90 shadow-xl overflow-hidden transition-all hover:border-brand-400">
+        
+        <!-- 頂部身分橫幅 -->
+        <div class="bg-slate-900 text-white px-8 py-4 flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded bg-brand-500 text-white font-bold text-xs uppercase tracking-wider">FOUNDER & HEAD COACH</span>
+            <span class="text-sm font-bold text-orange-200">Orange Rabbit 創辦人 / 首席教學顧問</span>
+          </div>
+          <div class="flex items-center gap-3 text-xs text-slate-300">
+            <span>累計一對一教學 2,000+ 小時</span>
+            <span>•</span>
+            <span class="text-amber-400 font-bold">★★★★★ 98% 滿意推薦</span>
+          </div>
+        </div>
+
+        <div class="p-8 sm:p-12 space-y-10">
+          
+          <!-- 基本資料與經歷區 -->
+          <div class="grid lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- 頭像區 -->
+            <div class="lg:col-span-4 text-center">
+              <div class="relative mx-auto w-52 h-52 sm:w-64 sm:h-64 rounded-3xl bg-gradient-to-tr from-brand-500 via-amber-400 to-orange-300 p-2 shadow-xl flex items-center justify-center">
+                <div class="w-full h-full rounded-2xl bg-white flex flex-col items-center justify-center p-6 space-y-3">
+                  <div class="w-20 h-20 rounded-full bg-orange-100 flex items-center justify-center text-brand-600">
+                    <svg class="w-14 h-14 fill-current" viewBox="0 0 24 24">
+                      <path d="M12 2C10.5 2 9.5 3.5 10 5.5C10.5 7.5 11 9 10 10.5C9 12 7.5 12 6 11.5C4 11 2 12.5 2 14.5C2 18 5 21 9 21C14 21 19 18 19 13C19 9 16 7 14 7C13.5 5 13.5 2 12 2ZM8 14C8.55 14 9 14.45 9 15C9 15.55 8.55 16 8 16C7.45 16 7 15.55 7 15C7 14.45 7.45 14 8 14ZM14 4C14.5 4 15 5 14.8 6.5C14.5 8 13.5 9 13.5 9.5C13.5 9.5 14.5 8.5 15.5 8.5C16.5 8.5 17.5 9.5 17.5 11C17.5 11 19 8 18 6C17 4 15.5 3 14 4Z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 class="text-2xl font-black text-slate-900">Teacher Peter</h2>
+                    <p class="text-xs text-brand-600 font-bold">Peter 老師</p>
+                  </div>
+                  <span class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
+                    商務職場・流暢口說・高分檢定
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 老師自述與經歷清單 -->
+            <div class="lg:col-span-8 space-y-5">
+              <h3 class="text-xl sm:text-2xl font-black text-slate-900">
+                「別把英文當作背誦的學科，它只是你表達個人思想的工具。」
+              </h3>
+              <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                我是 Peter。曾在美商科技集團擔任跨國專案溝通顧問，輔導過工程師、高階主管、產品經理及海外留學生。我看過許多台灣學生背了上萬個單字、多益考取高分，但在會議桌上卻總是難以組織出母語級的自然句型。我創立 Orange Rabbit 的初衷，就是希望陪伴學員擺脫恐懼，建立能即時反應的直覺思考。
+              </p>
+
+              <!-- 經歷與認證四宮格 -->
+              <div class="grid sm:grid-cols-2 gap-3.5 pt-2">
+                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100">
+                  <span class="text-xs font-bold text-brand-600 block">國際專業證照</span>
+                  <strong class="text-slate-900 text-sm block font-bold">英國劍橋 CELTA / TESOL</strong>
+                  <span class="text-xs text-slate-500">國際英語成人教學師資認證</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100">
+                  <span class="text-xs font-bold text-brand-600 block">檢定實戰標竿</span>
+                  <strong class="text-slate-900 text-sm block font-bold">TOEIC 990 滿分金色證書</strong>
+                  <span class="text-xs text-slate-500">IELTS 8.5 分 高分破題教練</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100">
+                  <span class="text-xs font-bold text-brand-600 block">職場顧問資歷</span>
+                  <strong class="text-slate-900 text-sm block font-bold">美商跨國團隊溝通指導</strong>
+                  <span class="text-xs text-slate-500">專精英文面試、談判與簡報</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100">
+                  <span class="text-xs font-bold text-brand-600 block">教學風格特色</span>
+                  <strong class="text-slate-900 text-sm block font-bold">幽默耐心、精準除錯</strong>
+                  <span class="text-xs text-slate-500">零評判環境，提供課後發音筆記</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 關鍵重構：Peter 老師的「獨創教學方法」直接內嵌在此資料卡中 -->
+          <div class="rounded-2xl bg-gradient-to-br from-orange-50/80 via-amber-50/40 to-slate-50 p-6 sm:p-8 border border-orange-100/90 space-y-6">
+            <div class="flex flex-wrap items-center justify-between gap-3 border-b border-orange-200/60 pb-4">
+              <div>
+                <span class="text-xs font-extrabold text-brand-700 tracking-wider uppercase">EXCLUSIVE TEACHING SYSTEM</span>
+                <h4 class="text-xl font-black text-slate-900 mt-0.5">
+                  Peter 老師獨創教學方法：【三階自然輸出法】
+                </h4>
+              </div>
+              <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white text-brand-700 border border-orange-200 shadow-sm">
+                專治「腦中中翻英卡住」與「開口詞窮」
+              </span>
+            </div>
+
+            <!-- 三階段卡片 -->
+            <div class="grid md:grid-cols-3 gap-5">
+              
+              <div class="bg-white rounded-xl p-5 border border-orange-100 shadow-sm space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-7 h-7 rounded-lg bg-orange-100 text-brand-600 font-black text-xs flex items-center justify-center">01</span>
+                  <h5 class="font-bold text-slate-900 text-sm">Input：精準高頻實戰輸入</h5>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  不背死板單字。聚焦職場與生活最核心的 20% 高頻搭配詞（Collocations），帶你聽懂母語人士常見的連音與口語習慣。
+                </p>
+              </div>
+
+              <div class="bg-white rounded-xl p-5 border border-orange-100 shadow-sm space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 font-black text-xs flex items-center justify-center">02</span>
+                  <h5 class="font-bold text-slate-900 text-sm">Internalize：情境鷹架內化</h5>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  運用引導式提問（Scaffolding），在課堂中即時變換工作情境進行角色模擬，把語法規則轉換為嘴部肌肉記憶。
+                </p>
+              </div>
+
+              <div class="bg-white rounded-xl p-5 border border-orange-100 shadow-sm space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-7 h-7 rounded-lg bg-brand-500 text-white font-black text-xs flex items-center justify-center">03</span>
+                  <h5 class="font-bold text-slate-900 text-sm">Output：即時除錯自然輸出</h5>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  進行無劇本即興對話。老師當場給予得體且高質感的替換句型（Paraphrasing），課後附上客製發音回饋音檔。
+                </p>
+              </div>
+
+            </div>
+
+            <!-- 卡片底部的個人專屬 CTA -->
+            <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div class="text-xs text-slate-500">
+                💡 試聽課中，Peter 老師將為你進行一對一 15 分鐘精確口語瓶頸分析。
+              </div>
+              <a href="./contact.html?teacher=Peter" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-600 text-white text-xs font-black transition shadow-md">
+                <span>預約 Peter 老師的 25 分鐘試聽</span>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <!-- ================= 擴展插槽：未來加入其他師資的模組化預留卡片 ================= -->
+      <div class="bg-slate-50 rounded-3xl border-2 border-dashed border-slate-300 p-8 sm:p-10 text-center space-y-4">
+        <div class="w-14 h-14 rounded-2xl bg-slate-200 text-slate-500 mx-auto flex items-center justify-center">
+          <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+          </svg>
+        </div>
+        <div class="max-w-xl mx-auto space-y-1.5">
+          <h4 class="text-lg font-bold text-slate-800">更多嚴選優秀師資，即將陸續登場！</h4>
+          <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
+            Orange Rabbit 堅持嚴格的師資篩選機制（僅 5% 錄取率）。我們正在為學員網羅更多涵蓋「生活口說引導」、「青少年美語啟蒙」與「雅思寫作突破」領域的優秀導師，每位老師都將帶來專屬的獨創方法！
+          </p>
+        </div>
+        <div class="pt-2">
+          <a href="./contact.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700 transition">
+            <span>有特定專業領域學習需求？歡迎直接聯絡我們</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 品牌故事 -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+      <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl p-8 sm:p-12 border border-orange-100 space-y-6">
+        <div class="flex items-center gap-3">
+          <span class="text-3xl">🥕🐇</span>
+          <h3 class="text-2xl font-black text-slate-900">關於「Orange Rabbit 橘兔」的品牌初衷</h3>
+        </div>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          兔子（Rabbit）代表敏捷、充滿好奇心，而且擅長跳躍（Hop）。許多人在學英文時，總是被動地待在自己不敢開口的「舒適圈」裡。
+        </p>
+        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          而亮橘色（Orange）代表熱情、溫暖與正能量。我們希望在 Orange Rabbit，每一位導師都能像充滿活力的夥伴，陪你跨過心裡的藩籬，一跳就躍入世界舞台！
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== 全域頁尾 ==================== -->
+  <footer class="bg-slate-900 text-slate-400 py-14 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-500 to-amber-400 flex items-center justify-center text-white">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2C10.5 2 9.5 3.5 10 5.5C10.5 7.5 11 9 10 10.5C9 12 7.5 12 6 11.5C4 11 2 12.5 2 14.5C2 18 5 21 9 21C14 21 19 18 19 13C19 9 16 7 14 7C13.5 5 13.5 2 12 2ZM8 14C8.55 14 9 14.45 9 15C9 15.55 8.55 16 8 16C7.45 16 7 15.55 7 15C7 14.45 7.45 14 8 14ZM14 4C14.5 4 15 5 14.8 6.5C14.5 8 13.5 9 13.5 9.5C13.5 9.5 14.5 8.5 15.5 8.5C16.5 8.5 17.5 9.5 17.5 11C17.5 11 19 8 18 6C17 4 15.5 3 14 4Z" />
+              </svg>
+            </div>
+            <span class="text-xl font-bold text-white tracking-tight">Orange Rabbit 橘兔英文教室</span>
+          </div>
+          <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+            *Hop into Confident English!* 一對一線上客製化英語家教。
+          </p>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white tracking-wider uppercase mb-4">網站選單</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="./index.html" class="hover:text-white transition">首頁</a></li>
+            <li><a href="./about.html" class="hover:text-white transition text-brand-400">專業師資陣容</a></li>
+            <li><a href="./courses.html" class="hover:text-white transition">課程方案與費用</a></li>
+            <li><a href="./quiz.html" class="hover:text-white transition">程度快測小工具</a></li>
+            <li><a href="./faq.html" class="hover:text-white transition">常見問題 FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white tracking-wider uppercase mb-4">預約與聯絡</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="./contact.html" class="text-brand-400 hover:text-brand-300 font-bold transition">預約 25 分鐘試聽</a></li>
+            <li><span class="text-slate-400">官方 LINE：@orangerabbit</span></li>
+            <li><span class="text-slate-400">Email: hello@orangerabbit.com</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+        &copy; 2026 Orange Rabbit English Lab. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
+

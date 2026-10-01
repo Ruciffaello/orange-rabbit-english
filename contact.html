@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>預約試聽與聯絡 | Orange Rabbit 橘兔英文教室</title>
+  <meta name="description" content="預約 Orange Rabbit 25 分鐘免費一對一程度診斷與試聽，或透過 LINE 官方帳號即時諮詢。">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              300: '#fdba74',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+            },
+            accent: {
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & 自訂樣式 -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+  <!-- ==================== 頂部全域導覽列 ==================== -->
+  <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav border-b border-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="./index.html" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-500 to-accent-400 flex items-center justify-center shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          <svg class="w-7 h-7 text-white fill-current" viewBox="0 0 24 24">
+            <path d="M12 2C10.5 2 9.5 3.5 10 5.5C10.5 7.5 11 9 10 10.5C9 12 7.5 12 6 11.5C4 11 2 12.5 2 14.5C2 18 5 21 9 21C14 21 19 18 19 13C19 9 16 7 14 7C13.5 5 13.5 2 12 2ZM8 14C8.55 14 9 14.45 9 15C9 15.55 8.55 16 8 16C7.45 16 7 15.55 7 15C7 14.45 7.45 14 8 14ZM14 4C14.5 4 15 5 14.8 6.5C14.5 8 13.5 9 13.5 9.5C13.5 9.5 14.5 8.5 15.5 8.5C16.5 8.5 17.5 9.5 17.5 11C17.5 11 19 8 18 6C17 4 15.5 3 14 4Z" />
+          </svg>
+        </div>
+        <div>
+          <span class="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-brand-500 transition-colors">Orange Rabbit</span>
+          <span class="block text-xs font-semibold text-brand-600 tracking-wider uppercase">橘兔英文教室</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="./index.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">首頁</a>
+        <a href="./about.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">關於師資</a>
+        <a href="./courses.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">課程與費用</a>
+        <a href="./quiz.html" class="text-sm font-semibold text-amber-600 hover:text-amber-700 bg-amber-50 px-3 py-1 rounded-full border border-amber-200 transition-all hover:bg-amber-100 flex items-center gap-1">
+          <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          程度快測
+        </a>
+        <a href="./faq.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">常見問題</a>
+        <a href="./contact.html" class="text-sm font-bold text-brand-600 border-b-2 border-brand-500 pb-0.5">聯絡諮詢</a>
+      </nav>
+
+      <!-- CTA -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="./contact.html" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-bold text-white bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 shadow-md shadow-brand-500/25 transition-all transform hover:-translate-y-0.5">
+          免費預約 25 分鐘試聽
+        </a>
+      </div>
+
+      <!-- Mobile Button -->
+      <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="切換導覽選單">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 shadow-xl">
+      <a href="./index.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">首頁</a>
+      <a href="./about.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">關於師資</a>
+      <a href="./courses.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">課程與費用</a>
+      <a href="./quiz.html" class="block py-2 text-base font-bold text-amber-600">⚡ 3分鐘程度快測</a>
+      <a href="./faq.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">常見問題 FAQ</a>
+      <a href="./contact.html" class="block py-2 text-base font-bold text-brand-600">聯絡諮詢</a>
+      <div class="pt-2">
+        <a href="./contact.html" class="block w-full text-center py-3 rounded-xl text-sm font-bold text-white bg-brand-500 hover:bg-brand-600 shadow-md">
+          免費預約 25 分鐘試聽
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== 主內容區 ==================== -->
+  <main class="flex-grow pt-28 pb-20">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- 頁首標題 -->
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-brand-700 text-xs font-bold border border-orange-200">
+          <span>CONTACT & FREE TRIAL</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+          開始你的自信英文第一步
+        </h1>
+        <p class="text-slate-600 text-base sm:text-lg">
+          提供免費 25 分鐘一對一試聽與程度評估。歡迎直接填寫預約表單，或加入官方 LINE 快速洽詢！
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- 左側：LINE 官方帳號與直接聯絡資訊 (5 columns) -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <!-- LINE 專屬吸睛綠色推薦卡片 -->
+          <div class="bg-gradient-to-br from-[#06C755] to-[#04a044] text-white rounded-3xl p-8 shadow-xl relative overflow-hidden space-y-5">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full bg-white/20 text-xs font-extrabold backdrop-blur-sm">
+                最快回覆途徑
+              </span>
+              <span class="text-xs text-white/80">真人教練親切回覆</span>
+            </div>
+
+            <div class="space-y-2">
+              <h3 class="text-2xl font-black">加入 LINE 官方帳號</h3>
+              <p class="text-white/90 text-sm leading-relaxed">
+                不想等 Email 回信？掃描或點擊下方按鈕加入好友，直接與 Peter 老師或教學團隊溝通你的需求，即時預約試聽時間！
+              </p>
+            </div>
+
+            <div class="pt-2">
+              <a href="https://line.me" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-white text-[#06C755] hover:bg-slate-50 font-black text-base transition shadow-md group">
+                <svg class="w-6 h-6 fill-current text-[#06C755]" viewBox="0 0 24 24">
+                  <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+                </svg>
+                <span>一鍵加 LINE：@orangerabbit</span>
+              </a>
+            </div>
+
+            <div class="text-xs text-white/80 text-center">
+              ID 搜尋：<span class="font-bold underline">@orangerabbit</span>（含 @）
+            </div>
+          </div>
+
+          <!-- 其他聯絡方式小卡 -->
+          <div class="bg-white rounded-3xl p-6 border border-slate-200 space-y-4">
+            <h4 class="font-bold text-slate-800 text-sm">其他諮詢與教學諮詢說明</h4>
+            <div class="space-y-3 text-xs sm:text-sm text-slate-600">
+              <div class="flex items-start gap-3">
+                <span class="font-bold text-brand-600">📧 信箱：</span>
+                <span>hello@orangerabbit.com</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="font-bold text-brand-600">⏱️ 回覆時間：</span>
+                <span>週一至週日 09:00 - 22:00（通常於 3 小時內回覆）</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="font-bold text-brand-600">💻 試聽平台：</span>
+                <span>Google Meet 線上會議室（預約確認後寄送專屬連結）</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 右側：線上預約試聽表單 (7 columns) -->
+        <div class="lg:col-span-7">
+          <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/80 shadow-xl space-y-6">
+            
+            <div class="border-b border-slate-100 pb-4">
+              <h3 class="text-2xl font-black text-slate-900">填寫試聽預約單</h3>
+              <p class="text-xs sm:text-sm text-slate-500 mt-1">
+                請留下您的基本資訊，我們將在 24 小時內發送試聽會議連結給您。
+              </p>
+            </div>
+
+            <form id="contact-form" action="https://formspree.io/f/mgavqblp" method="POST" onsubmit="handleFormSubmit(event)" class="space-y-5">
+              
+              <!-- 姓名 -->
+              <div>
+                <label for="user-name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  您的姓名 / 稱呼 <span class="text-rose-500">*</span>
+                </label>
+                <input type="text" id="user-name" name="學員姓名" required placeholder="例如：Alex Wang" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm">
+              </div>
+
+              <!-- Email 與 LINE ID (雙欄) -->
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="user-email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                    電子郵件 Email <span class="text-rose-500">*</span>
+                  </label>
+                  <input type="email" id="user-email" name="電子信箱" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm">
+                </div>
+                <div>
+                  <label for="user-line" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                    LINE ID 或 手機號碼 <span class="text-rose-500">*</span>
+                  </label>
+                  <input type="text" id="user-line" name="LINE_ID或手機" required placeholder="方便快速與您確認時段" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm">
+                </div>
+              </div>
+
+              <!-- 指定試聽老師（支援多師資擴展架構） -->
+              <div>
+                <label for="preferred-teacher-select" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  偏好 / 指定試聽導師
+                </label>
+                <select id="preferred-teacher-select" name="指定試聽老師" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm bg-white">
+                  <option value="由教室推薦適合師資">不指定（由 Orange Rabbit 依目標推薦最適合師資）</option>
+                  <option value="Peter">Peter 老師（創辦人・職場商務 / 流暢口說 / 高分檢定）</option>
+                </select>
+              </div>
+
+              <!-- 目前英文程度（支援首頁測驗自動填入） -->
+              <div>
+                <label for="current-level-select" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  自評目前英文程度
+                </label>
+                <select id="current-level-select" name="目前英文程度" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm bg-white">
+                  <option value="">-- 請選擇目前程度 --</option>
+                  <option value="基礎 (A1-A2)">基礎 (A1-A2) - 很少開口、單字拼湊</option>
+                  <option value="中階 (B1-B2)">中階 (B1-B2) - 日常可聊、但職場或進階易卡詞</option>
+                  <option value="中高階 (B2-C1)">中高階 (B2-C1) - 追求專業表達、商務談判、英檢高分</option>
+                  <option value="不確定，想透過試聽評估">不確定，想透過 25 分鐘試聽由老師評估</option>
+                </select>
+              </div>
+
+              <!-- 學習目標（支援測驗自動填入） -->
+              <div>
+                <label for="learning-goal-input" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  學習目標或感興趣的方案
+                </label>
+                <input type="text" id="learning-goal-input" name="學習目標或建議方案" placeholder="例如：生活英語自由說、職場商務、外商面試準備..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm">
+              </div>
+
+              <!-- 方便試聽的時段 -->
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                  方便預約試聽的時段（可複選）
+                </label>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs text-slate-700">
+                  <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                    <input type="checkbox" name="方便時段" value="平日晚上" class="text-brand-500 focus:ring-brand-500">
+                    平日晚上 (19:00-22:00)
+                  </label>
+                  <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                    <input type="checkbox" name="方便時段" value="週末白天" class="text-brand-500 focus:ring-brand-500">
+                    週末白天 (10:00-17:00)
+                  </label>
+                  <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                    <input type="checkbox" name="方便時段" value="週末晚上" class="text-brand-500 focus:ring-brand-500">
+                    週末晚上 (19:00-22:00)
+                  </label>
+                  <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                    <input type="checkbox" name="方便時段" value="平日白天" class="text-brand-500 focus:ring-brand-500">
+                    平日白天 (彈性時段)
+                  </label>
+                </div>
+              </div>
+
+              <!-- 錯誤訊息提示區 -->
+              <div id="form-error-alert" class="hidden p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs"></div>
+
+              <!-- 提交按鈕 -->
+              <div class="pt-2">
+                <button type="submit" id="submit-btn" class="w-full py-4 rounded-2xl bg-brand-500 hover:bg-brand-600 text-white font-black text-base shadow-lg shadow-brand-500/30 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                  <span id="btn-text">送出預約，免費享有 25 分鐘程度評估</span>
+                  <svg id="btn-spinner" class="hidden w-5 h-5 text-white animate-spin" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="text-center text-xs text-slate-400">
+                🔒 本表單已整合安全加密發信系統，絕不外流您的個人資料。
+              </div>
+
+            </form>
+
+            <!-- 成功提示視窗 (預設隱藏) -->
+            <div id="form-success-alert" class="hidden p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900 space-y-3">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold">✓</div>
+                <h4 class="font-extrabold text-lg">預約信件已成功寄出！</h4>
+              </div>
+              <p class="text-xs sm:text-sm text-emerald-800 leading-relaxed">
+                感謝您的預約！Peter 老師與教學團隊已收到您的預約資訊，將於 24 小時內透過 Email 或 LINE 與您聯繫確認試聽會議室連結。若想更快安排，也歡迎直接加 LINE 傳訊息告知我們喔！
+              </p>
+              <div class="pt-2">
+                <a href="https://line.me" target="_blank" class="inline-block px-4 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700 transition">
+                  立即前往 LINE 發送招呼
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ==================== 全域頁尾 ==================== -->
+  <footer class="bg-slate-900 text-slate-400 py-14 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-500 to-amber-400 flex items-center justify-center text-white">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2C10.5 2 9.5 3.5 10 5.5C10.5 7.5 11 9 10 10.5C9 12 7.5 12 6 11.5C4 11 2 12.5 2 14.5C2 18 5 21 9 21C14 21 19 18 19 13C19 9 16 7 14 7C13.5 5 13.5 2 12 2ZM8 14C8.55 14 9 14.45 9 15C9 15.55 8.55 16 8 16C7.45 16 7 15.55 7 15C7 14.45 7.45 14 8 14ZM14 4C14.5 4 15 5 14.8 6.5C14.5 8 13.5 9 13.5 9.5C13.5 9.5 14.5 8.5 15.5 8.5C16.5 8.5 17.5 9.5 17.5 11C17.5 11 19 8 18 6C17 4 15.5 3 14 4Z" />
+              </svg>
+            </div>
+            <span class="text-xl font-bold text-white tracking-tight">Orange Rabbit 橘兔英文教室</span>
+          </div>
+          <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+            *Hop into Confident English!* 一對一線上客製化英語家教。
+          </p>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white tracking-wider uppercase mb-4">網站選單</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="./index.html" class="hover:text-white transition">首頁</a></li>
+            <li><a href="./about.html" class="hover:text-white transition">關於師資與故事</a></li>
+            <li><a href="./courses.html" class="hover:text-white transition">課程方案與費用</a></li>
+            <li><a href="./quiz.html" class="hover:text-white transition">程度快測小工具</a></li>
+            <li><a href="./faq.html" class="hover:text-white transition">常見問題 FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white tracking-wider uppercase mb-4">預約與聯絡</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="./contact.html" class="text-brand-400 hover:text-brand-300 font-bold transition">預約 25 分鐘試聽</a></li>
+            <li><span class="text-slate-400">官方 LINE：@orangerabbit</span></li>
+            <li><span class="text-slate-400">Email: hello@orangerabbit.com</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+        &copy; 2026 Orange Rabbit English Lab. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+  <script>
+    async function handleFormSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('contact-form');
+      const submitBtn = document.getElementById('submit-btn');
+      const btnText = document.getElementById('btn-text');
+      const btnSpinner = document.getElementById('btn-spinner');
+      const successAlert = document.getElementById('form-success-alert');
+      const errorAlert = document.getElementById('form-error-alert');
+
+      // 隱藏錯誤提示並切換按鈕狀態為「發送中」
+      errorAlert.classList.add('hidden');
+      submitBtn.disabled = true;
+      btnText.innerText = '正在發送預約信件...';
+      btnSpinner.classList.remove('hidden');
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          // 真正發信成功！
+          form.classList.add('hidden');
+          successAlert.classList.remove('hidden');
+          successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          const data = await response.json();
+          let errorMsg = '發送失敗，請稍後再試或直接加 LINE 聯絡。';
+          if (data && data.errors) {
+            errorMsg = data.errors.map(err => err.message).join(', ');
+          }
+          errorAlert.innerText = errorMsg;
+          errorAlert.classList.remove('hidden');
+          submitBtn.disabled = false;
+          btnText.innerText = '送出預約，免費享有 25 分鐘程度評估';
+          btnSpinner.classList.add('hidden');
+        }
+      } catch (error) {
+        errorAlert.innerText = '網路連線異常，請檢查連線或改用 LINE 聯絡我們。';
+        errorAlert.classList.remove('hidden');
+        submitBtn.disabled = false;
+        btnText.innerText = '送出預約，免費享有 25 分鐘程度評估';
+        btnSpinner.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,661 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orange Rabbit 橘兔英文教室 | 一對一線上英語家教・自信開口說英文</title>
+  <meta name="description" content="Orange Rabbit 橘兔英文教室，專注一對一線上客製化教學。從日常生活口說、職場商務英語到多益英檢衝刺，陪你跳出英文舒適圈，打造流暢直覺英語力！">
+
+  <!-- Open Graph / 社群分享預覽 -->
+  <meta property="og:title" content="Orange Rabbit 橘兔英文教室 | 一對一線上英語家教">
+  <meta property="og:description" content="陪你跳出英文舒適圈，自信開口說！立即進行 3 分鐘程度快測，預約 25 分鐘免費試聽。">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              300: '#fdba74',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+            },
+            accent: {
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+            },
+            slate: {
+              850: '#151e2e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & 自訂樣式 -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+  <!-- ==================== 頂部全域導覽列 ==================== -->
+  <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav border-b border-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="./index.html" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-500 to-accent-400 flex items-center justify-center shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          <!-- Orange Rabbit SVG Icon -->
+          <svg class="w-7 h-7 text-white fill-current" viewBox="0 0 24 24">
+            <path d="M12 2C10.5 2 9.5 3.5 10 5.5C10.5 7.5 11 9 10 10.5C9 12 7.5 12 6 11.5C4 11 2 12.5 2 14.5C2 18 5 21 9 21C14 21 19 18 19 13C19 9 16 7 14 7C13.5 5 13.5 2 12 2ZM8 14C8.55 14 9 14.45 9 15C9 15.55 8.55 16 8 16C7.45 16 7 15.55 7 15C7 14.45 7.45 14 8 14ZM14 4C14.5 4 15 5 14.8 6.5C14.5 8 13.5 9 13.5 9.5C13.5 9.5 14.5 8.5 15.5 8.5C16.5 8.5 17.5 9.5 17.5 11C17.5 11 19 8 18 6C17 4 15.5 3 14 4Z" />
+          </svg>
+        </div>
+        <div>
+          <span class="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-brand-500 transition-colors">Orange Rabbit</span>
+          <span class="block text-xs font-semibold text-brand-600 tracking-wider uppercase">橘兔英文教室</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="./index.html" class="text-sm font-bold text-brand-600 border-b-2 border-brand-500 pb-0.5">首頁</a>
+        <a href="./about.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">專業師資陣容</a>
+        <a href="./courses.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">課程與費用</a>
+        <a href="./quiz.html" class="text-sm font-semibold text-amber-600 hover:text-amber-700 bg-amber-50 px-3 py-1 rounded-full border border-amber-200 transition-all hover:bg-amber-100 flex items-center gap-1">
+          <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          程度快測
+        </a>
+        <a href="./faq.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">常見問題</a>
+        <a href="./contact.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">聯絡諮詢</a>
+      </nav>
+
+      <!-- Desktop CTA Button -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="./contact.html" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-bold text-white bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 shadow-md shadow-brand-500/25 transition-all transform hover:-translate-y-0.5">
+          免費預約 25 分鐘試聽
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="切換導覽選單">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 shadow-xl">
+      <a href="./index.html" class="block py-2 text-base font-bold text-brand-600">首頁</a>
+      <a href="./about.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">關於師資</a>
+      <a href="./courses.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">課程與費用</a>
+      <a href="./quiz.html" class="block py-2 text-base font-bold text-amber-600">⚡ 3分鐘程度快測</a>
+      <a href="./faq.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">常見問題 FAQ</a>
+      <a href="./contact.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">聯絡諮詢</a>
+      <div class="pt-2">
+        <a href="./contact.html" class="block w-full text-center py-3 rounded-xl text-sm font-bold text-white bg-brand-500 hover:bg-brand-600 shadow-md">
+          免費預約 25 分鐘試聽
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== 主內容區 ==================== -->
+  <main class="flex-grow pt-20">
+
+    <!-- 1. HERO 區塊 -->
+    <section class="relative overflow-hidden hero-glow pt-12 pb-20 md:pt-20 md:pb-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Hero Text -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100 text-brand-700 text-xs sm:text-sm font-bold border border-orange-200">
+              <span class="animate-soft-bounce">🐰</span>
+              <span>Hop into Confident English! 擺脫開口焦慮</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+              告別死背與中翻英，<br>
+              打造能<span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-brand-600 to-accent-500">自信即時反應</span>的直覺英文腦！
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              Orange Rabbit 專為成人與求職者打造的 1-on-1 線上客製化教學。沒有照本宣科的死板課文，只有 100% 貼合你職場情境與生活對話的沉浸式實戰引導。
+            </p>
+
+            <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <a href="./contact.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl text-base font-extrabold text-white bg-brand-500 hover:bg-brand-600 shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5">
+                <span>免費預約 25 分鐘試聽</span>
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+
+              <a href="./quiz.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl text-base font-bold text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 shadow-sm transition-all hover:border-brand-300">
+                <svg class="w-5 h-5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>3分鐘程度快測</span>
+              </a>
+            </div>
+
+            <!-- 信任指標 / 數字成果 -->
+            <div class="pt-8 border-t border-slate-200/80 grid grid-cols-3 gap-4 text-center lg:text-left">
+              <div>
+                <div class="text-2xl sm:text-3xl font-black text-slate-900">2,000+</div>
+                <div class="text-xs text-slate-500 font-medium mt-0.5">累計教學小時</div>
+              </div>
+              <div>
+                <div class="text-2xl sm:text-3xl font-black text-brand-600">98%</div>
+                <div class="text-xs text-slate-500 font-medium mt-0.5">學員開口自信提升</div>
+              </div>
+              <div>
+                <div class="text-2xl sm:text-3xl font-black text-slate-900">1-on-1</div>
+                <div class="text-xs text-slate-500 font-medium mt-0.5">全客製化進度</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Hero Image / Visual Card -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative mx-auto max-w-md lg:max-w-none">
+              <!-- 背景裝飾小幾何 -->
+              <div class="absolute -top-6 -right-6 w-32 h-32 bg-amber-200/50 rounded-full blur-2xl"></div>
+              <div class="absolute -bottom-8 -left-8 w-40 h-40 bg-orange-300/40 rounded-full blur-2xl"></div>
+
+              <!-- 主形象卡片 -->
+              <div class="relative bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 space-y-6">
+                
+                <div class="flex items-center gap-4">
+                  <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-500 to-amber-400 flex items-center justify-center text-white shadow-lg shadow-brand-500/30">
+                    <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24">
+                      <path d="M12 2C10.5 2 9.5 3.5 10 5.5C10.5 7.5 11 9 10 10.5C9 12 7.5 12 6 11.5C4 11 2 12.5 2 14.5C2 18 5 21 9 21C14 21 19 18 19 13C19 9 16 7 14 7C13.5 5 13.5 2 12 2ZM8 14C8.55 14 9 14.45 9 15C9 15.55 8.55 16 8 16C7.45 16 7 15.55 7 15C7 14.45 7.45 14 8 14ZM14 4C14.5 4 15 5 14.8 6.5C14.5 8 13.5 9 13.5 9.5C13.5 9.5 14.5 8.5 15.5 8.5C16.5 8.5 17.5 9.5 17.5 11C17.5 11 19 8 18 6C17 4 15.5 3 14 4Z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-extrabold text-slate-900 text-lg">Teacher Peter & 專業師資</h3>
+                    <p class="text-xs text-brand-600 font-bold">創辦人領銜・國際認證英語教練團隊</p>
+                    <div class="flex items-center gap-1 mt-1 text-amber-400 text-xs">
+                      ★★★★★ <span class="text-slate-400 font-medium ml-1">(5.0 / 5.0)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 課堂實況特點標籤 -->
+                <div class="space-y-3">
+                  <div class="p-3.5 rounded-xl bg-orange-50/70 border border-orange-100 flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-bold text-xs">01</span>
+                    <div class="text-xs sm:text-sm text-slate-700">
+                      <strong class="text-slate-900 block font-bold">高頻情境模擬對話</strong>
+                      依據你的工作或生活主題，告別虛擬課本對話。
+                    </div>
+                  </div>
+
+                  <div class="p-3.5 rounded-xl bg-amber-50/70 border border-amber-100 flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold text-xs">02</span>
+                    <div class="text-xs sm:text-sm text-slate-700">
+                      <strong class="text-slate-900 block font-bold">語音筆記與台式發音矯正</strong>
+                      每堂課後提供專屬音檔與精準用詞替換建議。
+                    </div>
+                  </div>
+
+                  <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-lg bg-slate-800 text-white flex items-center justify-center font-bold text-xs">03</span>
+                    <div class="text-xs sm:text-sm text-slate-700">
+                      <strong class="text-slate-900 block font-bold">Zoom / Meet 靈活排課</strong>
+                      免通勤時間，下班或週末隨時打開筆電就能高效學習。
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 快速通往官方 LINE -->
+                <a href="./contact.html" class="block text-center py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold transition shadow-sm">
+                  💬 點此加入 LINE 官方帳號，真人一對一立即諮詢
+                </a>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 三大教學亮點 -->
+    <section class="py-20 bg-white border-y border-slate-200/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <span class="text-xs font-bold text-brand-600 uppercase tracking-widest bg-orange-100 px-3 py-1 rounded-full">WHY ORANGE RABBIT</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            為什麼學了十幾年英文，還是不敢開口？
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            傳統教育只教你「文法分析」與「克漏字單選題」，我們教你用英文的「邏輯」與「口語直覺」來溝通。
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-brand-300 transition-all hover:shadow-xl group">
+            <div class="w-14 h-14 rounded-2xl bg-orange-100 text-brand-600 flex items-center justify-center mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">100% 開口沉浸度</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              一堂課 50 分鐘內，學員開口說話時間佔 70% 以上。引導式提問打破沉默，老師即時搭鷹架（Scaffolding），不再讓你只回單字。
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-brand-300 transition-all hover:shadow-xl group">
+            <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">客製化生活與商務教材</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              拒絕十年前的過時教科書。直接將你明日要用的英文簡報、外商求職履歷或國外旅遊攻略當作課堂實戰教材。
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-brand-300 transition-all hover:shadow-xl group">
+            <div class="w-14 h-14 rounded-2xl bg-orange-100 text-brand-600 flex items-center justify-center mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">安全包容的除錯氛圍</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              在 Orange Rabbit，講錯是進步的唯一途徑！我們不只指正錯誤，更教你「母語者怎麼講更優雅」，建立無恐懼開口的安全感。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 核心互動：首頁程度測驗小工具 (QUIZ WIDGET) -->
+    <section id="level-quiz" class="py-20 bg-gradient-to-b from-slate-50 via-orange-50/30 to-slate-50 scroll-mt-20">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- 區塊標題 -->
+        <div class="text-center space-y-3 mb-10">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold border border-amber-200">
+            <span>⚡ 互動測驗</span>
+            <span>・</span>
+            <span>只需 3 分鐘</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+            測測看：你的英文目前卡在哪一關？
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base">
+            回答 4 題真實日常與職場情境，立即剖析你的語感瓶頸與最適合的學習方案！
+          </p>
+        </div>
+
+        <!-- 測驗互動卡片主體 (由 quiz.js 動態控制) -->
+        <div id="quiz-widget-card" class="bg-white rounded-3xl shadow-xl border border-slate-200/80 p-6 sm:p-10 transition-all duration-300">
+          
+          <!-- 進度條 -->
+          <div class="mb-8">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-2">
+              <span id="quiz-progress-text">第 1 題 / 共 4 題</span>
+              <span class="text-brand-600 font-extrabold">Orange Rabbit 程度分析</span>
+            </div>
+            <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+              <div id="quiz-progress-bar" class="h-full bg-gradient-to-r from-brand-500 to-accent-400 transition-width" style="width: 25%;"></div>
+            </div>
+          </div>
+
+          <!-- 題目區塊 -->
+          <div class="space-y-6">
+            <div>
+              <span id="quiz-question-desc" class="text-xs sm:text-sm font-semibold text-brand-600 block mb-1">請選擇最符合你狀況的選項：</span>
+              <h3 id="quiz-question-title" class="text-lg sm:text-2xl font-bold text-slate-900 leading-snug">
+                題目載入中...
+              </h3>
+            </div>
+
+            <!-- 選項按鈕容器 -->
+            <div id="quiz-options-container" class="space-y-3">
+              <!-- 由 js/quiz.js 動態生成選項 -->
+            </div>
+
+            <!-- 下方輔助列 -->
+            <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+              <button id="quiz-prev-btn" onclick="prevQuestion()" class="invisible text-xs font-semibold text-slate-500 hover:text-slate-800 transition flex items-center gap-1">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                回上一題
+              </button>
+              <div class="text-xs text-slate-400">
+                🔒 本測驗無需留下資料即可立即查看評估結果
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. 精選三大課程方案預覽 -->
+    <section class="py-20 bg-white border-t border-slate-200/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <div>
+            <span class="text-xs font-bold text-brand-600 uppercase tracking-widest bg-orange-100 px-3 py-1 rounded-full">POPULAR COURSES</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">
+              熱門課程方案
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base mt-2">
+              針對不同學習需求設計，每一堂課都能量身訂做。
+            </p>
+          </div>
+          <a href="./courses.html" class="inline-flex items-center gap-1.5 text-sm font-bold text-brand-600 hover:text-brand-700 transition">
+            <span>查看完整費用與課綱</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          
+          <!-- 課程 1: 生活口說 -->
+          <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div class="p-7 space-y-4">
+              <div class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700">入門／日常會話</div>
+              <a href="./course-daily.html" class="block group-hover:text-emerald-600 transition-colors">
+                <h3 class="text-2xl font-bold text-slate-900 group-hover:text-emerald-600 flex items-center justify-between">
+                  <span>生活英語自由說</span>
+                  <svg class="w-4 h-4 text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </h3>
+              </a>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                擺脫單字死背！以食衣住行、旅遊、日常社交為情境，建立自然發音與直覺句型反應。
+              </p>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 pt-2 border-t border-slate-100">
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-500 font-bold">✓</span> 旅遊問路、飯店點餐、突發應變實境
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-500 font-bold">✓</span> 告別逐字中翻英，培養美式語感
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-500 font-bold">✓</span> 自然發音（Phonics）連音技巧
+                </li>
+              </ul>
+            </div>
+            <div class="p-6 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-400">方案費用</span>
+                <div class="text-lg font-black text-slate-900">NT$ 950 <span class="text-xs font-normal text-slate-500">/ 堂起</span></div>
+              </div>
+              <a href="./course-daily.html" class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 hover:border-emerald-500 hover:text-emerald-600 transition shadow-sm">
+                完整課綱詳情 ➔
+              </a>
+            </div>
+          </div>
+
+          <!-- 課程 2: 職場商務 (熱門) -->
+          <div class="bg-white rounded-3xl border-2 border-brand-500 overflow-hidden shadow-xl relative flex flex-col justify-between transform md:-translate-y-2 group">
+            <div class="bg-brand-500 text-white text-center py-1.5 text-xs font-black uppercase tracking-wider">
+              🔥 最受上班族歡迎・推薦
+            </div>
+            <div class="p-7 space-y-4">
+              <div class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-orange-100 text-brand-700">職場實戰／求職面試</div>
+              <a href="./course-business.html" class="block group-hover:text-brand-600 transition-colors">
+                <h3 class="text-2xl font-bold text-slate-900 group-hover:text-brand-600 flex items-center justify-between">
+                  <span>職場商務實戰班</span>
+                  <svg class="w-4 h-4 text-slate-400 group-hover:text-brand-600 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </h3>
+              </a>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                專為職場人設計，涵蓋跨國會議主持、英文簡報說服力、專業商業書信與外商求職模擬面試。
+              </p>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 pt-2 border-t border-slate-100">
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-500 font-bold">✓</span> 高說服力商務簡報架構與控場
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-500 font-bold">✓</span> 職場衝突、協商談判得體用語
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-500 font-bold">✓</span> 課堂直接修改你下週要用的 Email/簡報
+                </li>
+              </ul>
+            </div>
+            <div class="p-6 bg-orange-50/50 border-t border-orange-100 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-brand-700">方案費用</span>
+                <div class="text-lg font-black text-brand-600">NT$ 1,200 <span class="text-xs font-normal text-slate-500">/ 堂起</span></div>
+              </div>
+              <a href="./course-business.html" class="px-4 py-2 rounded-xl bg-brand-500 text-xs font-bold text-white hover:bg-brand-600 transition shadow-sm">
+                完整課綱詳情 ➔
+              </a>
+            </div>
+          </div>
+
+          <!-- 課程 3: 檢定衝刺 -->
+          <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div class="p-7 space-y-4">
+              <div class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700">檢定衝刺／高階突破</div>
+              <a href="./course-exam.html" class="block group-hover:text-purple-600 transition-colors">
+                <h3 class="text-2xl font-bold text-slate-900 group-hover:text-purple-600 flex items-center justify-between">
+                  <span>TOEIC / IELTS 檢定專案</span>
+                  <svg class="w-4 h-4 text-slate-400 group-hover:text-purple-600 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </h3>
+              </a>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                不只死背解題技巧，更從根本鍛鍊快速抓關鍵字的聽力理解與口說邏輯，短期突破瓶頸分數。
+              </p>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 pt-2 border-t border-slate-100">
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-500 font-bold">✓</span> 聽力速記與關鍵訊號詞抓取技巧
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-500 font-bold">✓</span> IELTS Speaking 口說高分思維論述架構
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-500 font-bold">✓</span> 一對一弱點題型逐題深度解析
+                </li>
+              </ul>
+            </div>
+            <div class="p-6 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-400">方案費用</span>
+                <div class="text-lg font-black text-slate-900">NT$ 1,350 <span class="text-xs font-normal text-slate-500">/ 堂起</span></div>
+              </div>
+              <a href="./course-exam.html" class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 hover:border-purple-500 hover:text-purple-600 transition shadow-sm">
+                完整課綱詳情 ➔
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. 學生見證與好評 -->
+    <section class="py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <span class="text-xs font-bold text-brand-600 uppercase tracking-widest bg-orange-100 px-3 py-1 rounded-full">STUDENT TESTIMONIALS</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+            聽聽學員在 Orange Rabbit 的改變
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base">
+            真實一對一輔導回饋，見證從「不敢講」到「自信表達」的跨越。
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          
+          <div class="bg-white p-7 rounded-3xl border border-slate-200/80 shadow-sm space-y-4">
+            <div class="flex items-center gap-1 text-amber-400">★★★★★</div>
+            <p class="text-slate-700 text-sm leading-relaxed">
+              「過去在外商開跨國會議，我總是把麥克風靜音不敢講話。在 Orange Rabbit 練習了三個月的會議模擬與主持技巧，現在我能流暢主導 30 分鐘的專案進度匯報！」
+            </p>
+            <div class="pt-3 border-t border-slate-100 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-orange-100 text-brand-700 font-bold flex items-center justify-center text-sm">
+                AL
+              </div>
+              <div>
+                <div class="font-bold text-slate-900 text-sm">Allen Lin</div>
+                <div class="text-xs text-slate-500">外商科技公司 資深產品經理</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-7 rounded-3xl border border-slate-200/80 shadow-sm space-y-4">
+            <div class="flex items-center gap-1 text-amber-400">★★★★★</div>
+            <p class="text-slate-700 text-sm leading-relaxed">
+              「以前看到外國人就想躲，常常腦袋一片空白。老師上課非常有耐心，像朋友聊天一樣引導我開口，課後的發音音檔筆記更是超級實用！」
+            </p>
+            <div class="pt-3 border-t border-slate-100 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 font-bold flex items-center justify-center text-sm">
+                EC
+              </div>
+              <div>
+                <div class="font-bold text-slate-900 text-sm">Emily Chen</div>
+                <div class="text-xs text-slate-500">自由工作者・旅遊愛好者</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-7 rounded-3xl border border-slate-200/80 shadow-sm space-y-4">
+            <div class="flex items-center gap-1 text-amber-400">★★★★★</div>
+            <p class="text-slate-700 text-sm leading-relaxed">
+              「多益卡在 650 分兩年，原本只是想補解題技巧，但老師直接幫我抓出聽力連音的盲點，兩週衝刺最後拿到了 860 金色證書！」
+            </p>
+            <div class="pt-3 border-t border-slate-100 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-purple-100 text-purple-700 font-bold flex items-center justify-center text-sm">
+                KW
+              </div>
+              <div>
+                <div class="font-bold text-slate-900 text-sm">Kevin Wu</div>
+                <div class="text-xs text-slate-500">公關顧問公司 專案專員</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 底部行動呼籲 (Bottom CTA Banner) -->
+    <section class="py-16 bg-gradient-to-r from-brand-600 via-brand-500 to-amber-500 text-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+        <h2 class="text-3xl sm:text-4xl font-black tracking-tight">
+          準備好跨出第一步，輕鬆開口說英文了嗎？
+        </h2>
+        <p class="text-orange-100 text-base sm:text-lg max-w-2xl mx-auto">
+          現在預約即可享有「25 分鐘免費一對一程度評估與學習診斷」，完全不推銷，讓你清楚掌握自己的突破路徑。
+        </p>
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="./contact.html" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-2xl text-base font-extrabold text-brand-600 bg-white hover:bg-orange-50 shadow-xl transition transform hover:-translate-y-0.5">
+            立即免費預約試聽
+          </a>
+          <a href="https://line.me" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl text-base font-bold text-white bg-emerald-600 hover:bg-emerald-700 shadow-lg transition">
+            <span>💬 加 LINE 官方帳號諮詢</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== 全域頁尾 (Footer) ==================== -->
+  <footer class="bg-slate-900 text-slate-400 py-14 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+        
+        <!-- Brand Info -->
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-500 to-amber-400 flex items-center justify-center text-white">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2C10.5 2 9.5 3.5 10 5.5C10.5 7.5 11 9 10 10.5C9 12 7.5 12 6 11.5C4 11 2 12.5 2 14.5C2 18 5 21 9 21C14 21 19 18 19 13C19 9 16 7 14 7C13.5 5 13.5 2 12 2ZM8 14C8.55 14 9 14.45 9 15C9 15.55 8.55 16 8 16C7.45 16 7 15.55 7 15C7 14.45 7.45 14 8 14ZM14 4C14.5 4 15 5 14.8 6.5C14.5 8 13.5 9 13.5 9.5C13.5 9.5 14.5 8.5 15.5 8.5C16.5 8.5 17.5 9.5 17.5 11C17.5 11 19 8 18 6C17 4 15.5 3 14 4Z" />
+              </svg>
+            </div>
+            <span class="text-xl font-bold text-white tracking-tight">Orange Rabbit 橘兔英文教室</span>
+          </div>
+          <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+            *Hop into Confident English!* 一對一線上客製化英語家教。以實戰情境為本，陪你擺脫死背，自信開口看見世界。
+          </p>
+          <div class="text-xs text-slate-500">
+            服務方式：線上 Google Meet / Zoom 一對一
+          </div>
+        </div>
+
+        <!-- Links 1 -->
+        <div>
+          <h4 class="text-sm font-bold text-white tracking-wider uppercase mb-4">網站選單</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="./index.html" class="hover:text-white transition">首頁</a></li>
+            <li><a href="./about.html" class="hover:text-white transition">關於師資與故事</a></li>
+            <li><a href="./courses.html" class="hover:text-white transition">課程方案與費用</a></li>
+            <li><a href="./quiz.html" class="hover:text-brand-400 transition">程度快測小工具</a></li>
+            <li><a href="./faq.html" class="hover:text-white transition">常見問題 FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Links 2 & Contact -->
+        <div>
+          <h4 class="text-sm font-bold text-white tracking-wider uppercase mb-4">預約與聯絡</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="./contact.html" class="text-brand-400 hover:text-brand-300 font-bold transition">預約 25 分鐘試聽</a></li>
+            <li><span class="text-slate-400">官方 LINE：@orangerabbit</span></li>
+            <li><span class="text-slate-400">Email: hello@orangerabbit.com</span></li>
+            <li class="pt-2">
+              <span class="inline-block px-2.5 py-1 rounded bg-slate-800 text-xs text-slate-400">
+                本站支援 GitHub Pages 部署
+              </span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+        &copy; 2026 Orange Rabbit English Lab. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- 引用 JavaScript -->
+  <script src="./js/main.js"></script>
+  <script src="./js/quiz.js"></script>
+</body>
+</html>
+

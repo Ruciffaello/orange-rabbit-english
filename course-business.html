@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>職場商務實戰班 (Business & Workplace English) | Orange Rabbit 橘兔英文教室</title>
+  <meta name="description" content="Orange Rabbit 職場商務英語完整課綱：外商與跨國團隊首選！專攻英文簡報、跨國會議主持、商業書信與外商求職模擬面試。">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              300: '#fdba74',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+            },
+            accent: {
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & 自訂樣式 -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+  <!-- ==================== 頂部全域導覽列 ==================== -->
+  <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav border-b border-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="./index.html" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-500 to-accent-400 flex items-center justify-center shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          <svg class="w-7 h-7 text-white fill-current" viewBox="0 0 24 24">
+            <path d="M12 2C10.5 2 9.5 3.5 10 5.5C10.5 7.5 11 9 10 10.5C9 12 7.5 12 6 11.5C4 11 2 12.5 2 14.5C2 18 5 21 9 21C14 21 19 18 19 13C19 9 16 7 14 7C13.5 5 13.5 2 12 2ZM8 14C8.55 14 9 14.45 9 15C9 15.55 8.55 16 8 16C7.45 16 7 15.55 7 15C7 14.45 7.45 14 8 14ZM14 4C14.5 4 15 5 14.8 6.5C14.5 8 13.5 9 13.5 9.5C13.5 9.5 14.5 8.5 15.5 8.5C16.5 8.5 17.5 9.5 17.5 11C17.5 11 19 8 18 6C17 4 15.5 3 14 4Z" />
+          </svg>
+        </div>
+        <div>
+          <span class="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-brand-500 transition-colors">Orange Rabbit</span>
+          <span class="block text-xs font-semibold text-brand-600 tracking-wider uppercase">橘兔英文教室</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="./index.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">首頁</a>
+        <a href="./about.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">專業師資陣容</a>
+        <a href="./courses.html" class="text-sm font-bold text-brand-600 border-b-2 border-brand-500 pb-0.5">課程與費用</a>
+        <a href="./quiz.html" class="text-sm font-semibold text-amber-600 hover:text-amber-700 bg-amber-50 px-3 py-1 rounded-full border border-amber-200 transition-all hover:bg-amber-100 flex items-center gap-1">
+          <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          程度快測
+        </a>
+        <a href="./faq.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">常見問題</a>
+        <a href="./contact.html" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">聯絡諮詢</a>
+      </nav>
+
+      <!-- CTA -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="./contact.html?target=職場商務實戰班" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-bold text-white bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 shadow-md shadow-brand-500/25 transition-all transform hover:-translate-y-0.5">
+          預約本課程試聽
+        </a>
+      </div>
+
+      <!-- Mobile Button -->
+      <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="切換導覽選單">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 shadow-xl">
+      <a href="./index.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">首頁</a>
+      <a href="./about.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">專業師資陣容</a>
+      <a href="./courses.html" class="block py-2 text-base font-bold text-brand-600">課程與費用</a>
+      <a href="./quiz.html" class="block py-2 text-base font-bold text-amber-600">⚡ 3分鐘程度快測</a>
+      <a href="./faq.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">常見問題 FAQ</a>
+      <a href="./contact.html" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-500">聯絡諮詢</a>
+      <div class="pt-2">
+        <a href="./contact.html?target=職場商務實戰班" class="block w-full text-center py-3 rounded-xl text-sm font-bold text-white bg-brand-500 hover:bg-brand-600 shadow-md">
+          預約本課程試聽
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== 主內容區 ==================== -->
+  <main class="flex-grow pt-28 pb-20">
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- 麵包屑導航與返回按鈕 -->
+      <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-200/80">
+        <nav class="flex items-center text-xs sm:text-sm text-slate-500 space-x-2">
+          <a href="./index.html" class="hover:text-brand-600 transition">首頁</a>
+          <span>/</span>
+          <a href="./courses.html" class="hover:text-brand-600 transition">課程方案與費用</a>
+          <span>/</span>
+          <span class="text-slate-900 font-bold">職場商務實戰班</span>
+        </nav>
+        <a href="./courses.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-700 bg-orange-50 hover:bg-orange-100 px-3 py-1.5 rounded-lg transition">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          <span>返回課程總覽</span>
+        </a>
+      </div>
+
+      <!-- 課程 Banner 區 -->
+      <section class="bg-gradient-to-br from-brand-600 via-orange-600 to-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden mb-12">
+        <div class="relative z-10 space-y-4 max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold backdrop-blur-sm">
+            <span>🔥 最受上班族歡迎</span>
+            <span>•</span>
+            <span>中階～高階 (B1-B2) 適用</span>
+          </div>
+          <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+            職場商務實戰班<br>
+            <span class="text-amber-300 text-2xl sm:text-3xl font-bold">Business & Workplace English</span>
+          </h1>
+          <p class="text-orange-100 text-base sm:text-lg leading-relaxed pt-2">
+            把英文變成你在職場上升遷、跨國溝通與外商面試的核心競爭力。課堂直接結合你的工作專案、投影片與商業書信，現學現用！
+          </p>
+          <div class="pt-4 flex flex-wrap gap-4 items-center">
+            <div class="bg-black/30 backdrop-blur-sm px-4 py-2.5 rounded-xl text-xs font-semibold">
+              ⏱️ 單堂 50 分鐘・一對一高強度
+            </div>
+            <div class="bg-black/30 backdrop-blur-sm px-4 py-2.5 rounded-xl text-xs font-semibold">
+              💰 NT$ 1,200 ~ 1,350 / 堂
+            </div>
+            <a href="./contact.html?target=職場商務實戰班" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-white text-brand-600 hover:bg-orange-50 font-black text-xs sm:text-sm shadow transition">
+              <span>立即預約 25 分鐘免費試聽</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 適合對象與學習成效 -->
+      <section class="grid md:grid-cols-2 gap-8 mb-16">
+        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-4">
+          <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-brand-500"></span>
+            這門課最適合這樣的你：
+          </h3>
+          <ul class="space-y-3 text-sm text-slate-600">
+            <li class="flex items-start gap-2.5">
+              <span class="text-brand-500 font-bold">✓</span> 在外商或跨國團隊工作，但每到全英文線上會議就開啟靜音不敢發言。
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-brand-500 font-bold">✓</span> 需要向上級或海外客戶做英文簡報，擔心語氣太生硬或無法流暢應對 Q&A。
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-brand-500 font-bold">✓</span> 正在準備外商公司（Google, AWS, 外商投顧）求職模擬面試與履歷精修。
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-brand-500 font-bold">✓</span> 寫商業信件總是依賴翻譯軟體，害怕出現失禮或台式英文語病。
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-orange-50/60 rounded-3xl p-8 border border-orange-100 shadow-sm space-y-4">
+          <h3 class="text-xl font-bold text-orange-950 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-brand-500"></span>
+            完成本課程你將能夠：
+          </h3>
+          <ul class="space-y-3 text-sm text-orange-900">
+            <li class="flex items-start gap-2.5">
+              <span class="text-brand-600 font-bold">★</span> 掌握開場 3 分鐘抓緊聽眾注意力的簡報架構（The Hook & Payoff）。
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-brand-600 font-bold">★</span> 熟練運用 30+ 組專業商務協商、得體插話與化解歧見的高 EQ 句型。
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-brand-600 font-bold">★</span> 課堂直接修訂你下週工作真實要用的簡報或商業信件，產出即戰力。
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-brand-600 font-bold">★</span> 建立外商行為面試（STAR 架構）故事庫，自信談判薪資待遇。
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 核心課綱模組 -->
+      <section class="space-y-8 mb-16">
+        <div class="text-center max-w-2xl mx-auto space-y-2">
+          <span class="text-xs font-bold text-brand-600 uppercase tracking-widest bg-orange-100 px-3 py-1 rounded-full">SYLLABUS & MODULES</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">4 大職場核心模組深入解析</h2>
+          <p class="text-slate-500 text-xs sm:text-sm">由具備外商顧問背景的導師親授，直擊商業溝通的核心本質</p>
+        </div>
+
+        <div class="space-y-4">
+          
+          <!-- Module 1 -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-lg bg-orange-100 text-brand-700 text-xs font-bold">Module 01</span>
+              <span class="text-xs text-slate-400">模組時長：4 堂</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900">高說服力英文簡報：邏輯架構、圖表數據與 Q&A 拆彈</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              如何向老闆或客戶 Present？從開場 Hook、核心論點鋪陳、趨勢圖表數據解析（Soaring, Plateauing, Outperforming），到聽眾提問時若遇到聽不懂或刁鑽問題的 5 種專業拖延與反問策略。
+            </p>
+            <div class="p-3 rounded-xl bg-slate-50 text-xs text-slate-500 space-y-1">
+              <div><strong>簡報核心句型：</strong> Let me draw your attention to..., What this essentially means is..., If I understand your question correctly...</div>
+              <div><strong>實戰作業：</strong> 5 分鐘個人職場簡報驗收與導師逐頁給予用詞修訂。</div>
+            </div>
+          </div>
+
+          <!-- Module 2 -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-lg bg-orange-100 text-brand-700 text-xs font-bold">Module 02</span>
+              <span class="text-xs text-slate-400">模組時長：4 堂</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900">跨國線上會議主持與發言控場：插話、化解僵局與結論</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              在 Zoom / Teams 跨國會議中主動掌握發話權。練習禮貌打斷正在長篇大論的同事（May I jump in here for a second?）、指派行動清單（Action Items），以及會議紀錄（Minutes）精準總結。
+            </p>
+            <div class="p-3 rounded-xl bg-slate-50 text-xs text-slate-500 space-y-1">
+              <div><strong>會議控場句型：</strong> Let's circle back to..., Can you elaborate on that?, Let's agree to disagree for now.</div>
+              <div><strong>模擬情境：</strong> 預算刪減會議與跨部門推動阻力實境辯論。</div>
+            </div>
+          </div>
+
+          <!-- Module 3 -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-lg bg-orange-100 text-brand-700 text-xs font-bold">Module 03</span>
+              <span class="text-xs text-slate-400">模組時長：3 堂</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900">專業商務書信（Email & Slack）：精準得體、催進度不失禮</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              清除讓外國人看得一頭霧水的中式英文書信。學習正式（Formal）、半正式（Semi-formal）到內部即時訊息的語氣拿捏，如何在信中委婉催款、跟催專案進度，而不顯得粗暴冒犯。
+            </p>
+            <div class="p-3 rounded-xl bg-slate-50 text-xs text-slate-500 space-y-1">
+              <div><strong>高級書信公式：</strong> Gentle reminder, As per our conversation, I would appreciate it if you could...</div>
+            </div>
+          </div>
+
+          <!-- Module 4 -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-lg bg-orange-100 text-brand-700 text-xs font-bold">Module 04</span>
+              <span class="text-xs text-slate-400">模組時長：4 堂</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900">外商求職模擬面試：STAR 行為面試法與談判實戰</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              針對知名外商面試進行 1-on-1 模擬。將你的過去專案包裝成具有強大說服力的 STAR（情境、任務、行動、結果）故事，並演練如何回答「Tell me about your greatest weakness」與談判薪水套件。
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 底部預約卡片 -->
+      <section class="bg-gradient-to-r from-brand-600 to-amber-500 text-white rounded-3xl p-8 sm:p-12 text-center space-y-6 shadow-xl">
+        <h3 class="text-2xl sm:text-3xl font-black">準備好升級你的職場英語競爭力了嗎？</h3>
+        <p class="text-orange-100 text-sm sm:text-base max-w-xl mx-auto">
+          立即預約 25 分鐘免費試聽，帶一份你正在準備的簡報或職缺 JD，讓導師為你現場診斷！
+        </p>
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="./contact.html?target=職場商務實戰班" class="px-8 py-3.5 rounded-xl bg-white text-brand-600 font-black text-sm hover:bg-orange-50 transition shadow">
+            立即免費預約本課程試聽
+          </a>
+          <a href="./courses.html" class="px-6 py-3.5 rounded-xl bg-black/20 hover:bg-black/30 text-white font-bold text-sm transition">
+            查看其他方案與費用
+          </a>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- ==================== 全域頁尾 ==================== -->
+  <footer class="bg-slate-900 text-slate-400 py-14 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-500 to-amber-400 flex items-center justify-center text-white">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2C10.5 2 9.5 3.5 10 5.5C10.5 7.5 11 9 10 10.5C9 12 7.5 12 6 11.5C4 11 2 12.5 2 14.5C2 18 5 21 9 21C14 21 19 18 19 13C19 9 16 7 14 7C13.5 5 13.5 2 12 2ZM8 14C8.55 14 9 14.45 9 15C9 15.55 8.55 16 8 16C7.45 16 7 15.55 7 15C7 14.45 7.45 14 8 14ZM14 4C14.5 4 15 5 14.8 6.5C14.5 8 13.5 9 13.5 9.5C13.5 9.5 14.5 8.5 15.5 8.5C16.5 8.5 17.5 9.5 17.5 11C17.5 11 19 8 18 6C17 4 15.5 3 14 4Z" />
+              </svg>
+            </div>
+            <span class="text-xl font-bold text-white tracking-tight">Orange Rabbit 橘兔英文教室</span>
+          </div>
+          <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+            *Hop into Confident English!* 一對一線上客製化英語家教。
+          </p>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white tracking-wider uppercase mb-4">網站選單</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="./index.html" class="hover:text-white transition">首頁</a></li>
+            <li><a href="./about.html" class="hover:text-white transition">專業師資陣容</a></li>
+            <li><a href="./courses.html" class="hover:text-white transition text-brand-400">課程方案與費用</a></li>
+            <li><a href="./quiz.html" class="hover:text-white transition">程度快測小工具</a></li>
+            <li><a href="./faq.html" class="hover:text-white transition">常見問題 FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white tracking-wider uppercase mb-4">預約與聯絡</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="./contact.html" class="text-brand-400 hover:text-brand-300 font-bold transition">預約 25 分鐘試聽</a></li>
+            <li><span class="text-slate-400">官方 LINE：@orangerabbit</span></li>
+            <li><span class="text-slate-400">Email: hello@orangerabbit.com</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+        &copy; 2026 Orange Rabbit English Lab. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
+
