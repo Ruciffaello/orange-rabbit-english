@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Ferryman English - GEPT Level Test (全民英檢文法與單字檢測 Demo 版)
  * 專為獨立 quiz.html 設計，專注評測單字 (Vocabulary) 與文法 (Grammar)
  */
@@ -43,7 +43,7 @@ const GEPT_QUESTIONS = [
   {
     id: 4,
     type: "文法題 (Grammar) • 中級",
-    question: "The comprehensive marketing report _______ was compiled by Teacher Peter received unanimous praise from the board.",
+    question: "The comprehensive marketing report _______ was compiled by Teacher Humor received unanimous praise from the board.",
     options: [
       { text: "who", isCorrect: false },
       { text: "which", isCorrect: true },
@@ -348,7 +348,7 @@ function renderGeptFinalResult() {
 
       <div class="text-center pt-2">
         <p class="text-xs text-slate-400">
-          💡 此 Demo 版檢測聚焦於單字與文法結構。在 25 分鐘免費一對一試聽中，Peter 老師將進一步為您進行聽力連音與口說反應測試！
+          💡 此 Demo 版檢測聚焦於單字與文法結構。在 25 分鐘免費一對一試聽中，游末 (Humor) 老師將進一步為您進行聽力連音與口說反應測試！
         </p>
       </div>
 
